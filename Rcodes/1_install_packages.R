@@ -32,6 +32,6 @@ reticulate::install_python()
 
 # Refresh session before installing the packages below
 install.packages("tensorflow")
-install.packages("keras")
-keras::install_keras(version = "default-cpu")
+install.packages("keras3")
+keras3::install_keras(version = "default-cpu")
 

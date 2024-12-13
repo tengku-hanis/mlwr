@@ -13,7 +13,7 @@
 library(dplyr)
 library(recipes)
 library(rsample)
-library(keras)
+library(keras3)
 library(mlbench)
 
 
@@ -114,12 +114,9 @@ pima_y_test <-
 
 model <- 
   keras_model_sequential() %>% 
-  layer_dense(units = 128, 
-              activation = "relu") %>% 
-  layer_dense(units = 64, 
-              activation = "relu") %>% 
-  layer_dense(units = 1, 
-              activation = "sigmoid")
+  layer_dense(units = 128, activation = "relu") %>% 
+  layer_dense(units = 64, activation = "relu") %>% 
+  layer_dense(units = 1, activation = "sigmoid")
 
 
 # Compile the model -------------------------------------------------------
