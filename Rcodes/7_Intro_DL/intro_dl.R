@@ -6,7 +6,6 @@
 ##=============================================================================##
 
 # Basic workflow for deep neural network for keras and tensorflow 
-# Run time: 54.69 sec elapsed (my pc)
 
 # Packages ----------------------------------------------------------------
 
@@ -172,11 +171,11 @@ results <-
   evaluate(pima_x_test, pima_y_test)
 results
 
-# Classification 2 (Current model) - MARS:
+# Classification 2 - MARS:
 # Accuracy: 0.791
 # ROC_AUC: 0.859
 
-# Classification 1 (previous) - decision tree:
+# Classification 1 - decision tree:
 # Accuracy: 0.724
 # ROC_AUC: 0.767
 

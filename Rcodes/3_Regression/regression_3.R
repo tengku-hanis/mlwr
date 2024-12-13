@@ -8,8 +8,6 @@
 
 # Packages ----------------------------------------------------------------
 
-# install.packages("xgboost") # Make sure to install
-
 library(tidyverse)
 library(tidymodels)
 
@@ -138,7 +136,7 @@ mod_train <-
   fit(data = bike_train_process)
 
 # Visualise (not good as the model becomes more complex)
-vip::vip(mod_fit)
+vip::vip(mod_train)
 
 
 # Assess on testing data --------------------------------------------------
@@ -164,7 +162,7 @@ ggplot(bike_pred, aes(rentals, .pred)) +
 
 # Previous results:
 
-# Regression1:
+# Regression1 - decision tree:
 # 1 rmse              - 378.   
 # 2 mae               - 236.   
 # 3 huber_loss        - 236.   
@@ -172,7 +170,7 @@ ggplot(bike_pred, aes(rentals, .pred)) +
 # 5 ccc               -   0.841
 # 6 rsq               -   0.712
 
-# Regression2
+# Regression2 - decision tree:
 # 1 rmse              - 365.   
 # 2 mae               - 229.   
 # 3 huber_loss        - 228.   
@@ -180,10 +178,10 @@ ggplot(bike_pred, aes(rentals, .pred)) +
 # 5 ccc               -   0.845
 # 6 rsq               -   0.725
 
-# Regression3:
-# 1 rmse              - 297.   
-# 2 mae               - 209.   
-# 3 huber_loss        - 209.   
-# 4 huber_loss_pseudo - 208.   
-# 5 ccc               -   0.899
-# 6 rsq               -   0.819
+# Regression3 - boosted tree:
+# 1 rmse              - 285.   
+# 2 mae               - 198.   
+# 3 huber_loss        - 197.   
+# 4 huber_loss_pseudo - 197.   
+# 5 ccc               -   0.907
+# 6 rsq               -   0.833

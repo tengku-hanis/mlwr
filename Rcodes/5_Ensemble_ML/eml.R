@@ -183,12 +183,12 @@ ensemble_performance
 # 6 rsq               -   0.725
 
 # Regression3 (boosted tree):
-# 1 rmse              - 297.   
-# 2 mae               - 209.   
-# 3 huber_loss        - 209.   
-# 4 huber_loss_pseudo - 208.   
-# 5 ccc               -   0.899
-# 6 rsq               -   0.819
+# 1 rmse              - 285.   
+# 2 mae               - 198.   
+# 3 huber_loss        - 197.   
+# 4 huber_loss_pseudo - 197.   
+# 5 ccc               -   0.907
+# 6 rsq               -   0.833
 
 
 # Compare performance with candidates -------------------------------------
