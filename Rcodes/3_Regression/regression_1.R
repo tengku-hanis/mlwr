@@ -126,7 +126,7 @@ dt_fit <-
 rpart.plot::rpart.plot(dt_fit$fit, roundint = FALSE)
 
 # Another way to visualise
-vip::vip(dt_fit)
+vip::vip(dt_train)
 
 
 # Assess on testing data --------------------------------------------------
@@ -149,8 +149,19 @@ ggplot(bike_pred, aes(rentals, .pred)) +
   theme_bw()
 
 
+# Save the model ----------------------------------------------------------
 
+# Extract a simpler model
+dt_fit <- 
+  dt_train %>% 
+  extract_fit_parsnip()
 
+# Save model
+saveRDS(dt_fit, "dt_fit.rds")
+# saveRDS(dt_train, "dt_train.rds") #also can, but a larger model
 
+# Load model
+dt_fit_loaded <- readRDS("dt_fit.rds")
 
-
+# Predict model
+predict(dt_fit_loaded, new_data = bike_test_process[3:6, ])

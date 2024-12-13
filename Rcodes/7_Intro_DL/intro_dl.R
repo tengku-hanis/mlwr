@@ -220,3 +220,18 @@ pred %>%
   rename(prob = V1)
 
 
+# Save model --------------------------------------------------------------
+
+# Save model
+save_model(model,"dl_model.keras")
+
+# Load model
+loaded_model <- load_model("dl_model.keras")
+
+# Predict
+predict(loaded_model, new_data_preprocessed[1:2, ]) #probabilities
+
+predict(loaded_model, new_data_preprocessed[1:2, ]) %>% 
+  as_tibble() %>% 
+  mutate(diabetes = ifelse(V1 > 0.5, "pos", "neg")) %>% 
+  rename(prob = V1)
